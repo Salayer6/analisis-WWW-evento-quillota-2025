@@ -4,6 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>¿Quieres ver este informe? — Contador</title>
+  <!-- Google Tag Manager -->
+  <script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NXPQCSFJ');
+  </script>
+  <!-- End Google Tag Manager -->
   <style>
     :root{
       --bg1: #0f172a;
@@ -49,6 +58,10 @@
   </style>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXPQCSFJ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <main class="card" role="main" aria-labelledby="q">
     <h1 id="q">¿Quieres ver este informe?</h1>
     <p class="lead">Haz click en este botón las veces que quieras para contarme cuánto quieres verlo.</p>
@@ -58,11 +71,12 @@
   <script>
     // Solo para efectos visuales, no almacenamos nada local
     document.getElementById('btn').addEventListener('click', function(){
-      // Enviar evento a Google Analytics (GA4)
-      if(typeof gtag === 'function'){
-        gtag('event', 'click_informe', {
-          'event_category': 'Interaccion',
-          'event_label': 'Boton Contar Interes'
+      // Enviar evento personalizado a Google Tag Manager
+      if (window.dataLayer) {
+        window.dataLayer.push({
+          event: 'click_informe',
+          event_category: 'Interaccion',
+          event_label: 'Boton Contar Interes'
         });
       }
       this.textContent = '¡Gracias! (puedes volver a hacer click)';
