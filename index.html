@@ -74,7 +74,9 @@
       // Enviar evento personalizado a Google Tag Manager
       if (window.dataLayer) {
         window.dataLayer.push({
-          event: 'konoboton'
+          event: 'konoboton',
+            event_category: 'Interacción',
+            event_label: 'Botón Contar Interés'
         });
       }
       this.textContent = '¡Gracias! (puedes volver a hacer click)';
