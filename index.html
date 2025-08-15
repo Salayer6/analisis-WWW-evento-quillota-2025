@@ -69,14 +69,13 @@
   </main>
 
   <script>
-    // Solo para efectos visuales, no almacenamos nada local
     document.getElementById('btn').addEventListener('click', function(){
-      // Enviar evento personalizado a Google Tag Manager
+      // Enviar evento personalizado a Google Tag Manager con parámetros GA4
       if (window.dataLayer) {
         window.dataLayer.push({
           event: 'konoboton',
-            event_category: 'Interaction',
-            event_label: 'Tell Interest Button'
+          interaction_type: 'click', // Describe qué hizo el usuario
+          button_text: this.textContent // Captura el texto del botón en ese momento
         });
       }
       this.textContent = '¡Gracias! (puedes volver a hacer click)';
